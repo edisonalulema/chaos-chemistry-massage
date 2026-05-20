@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import sarahPhoto from '../assets/sarah.png';
+---
+
+<Layout
+  title="About Sarah — Licensed Massage Therapist in Grand County, CO"
+  description="Meet Sarah, the licensed massage therapist behind Chaos & Chemistry. Exercise Science degree, Costa Rica School of Massage Therapy graduate, Colorado License #MT.0026235."
+>
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[2fr_3fr] gap-12 items-start">
+      <div>
+        <Image
+          src={sarahPhoto}
+          alt="Sarah, licensed massage therapist (Colorado MT.0026235)"
+          class="rounded-2xl shadow-lg w-full aspect-square object-cover"
+          widths={[300, 500, 700]}
+          sizes="(max-width: 768px) 100vw, 400px"
+          loading="eager"
+        />
+      </div>
+
+      <div>
+        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">Meet the Therapist</p>
+        <h1 class="font-display text-4xl md:text-5xl text-sage-900 mb-6">Hi, I'm Sarah.</h1>
+
+        <div class="prose prose-lg text-sage-800 space-y-5 leading-relaxed">
+          <p>
+            I've called Grand County home since 2019, when I finished my Exercise Science
+            degree at Slippery Rock University and moved west. After several years working
+            across the valley, I fulfilled a long-held dream and graduated from the
+            <strong>Costa Rica School of Massage Therapy</strong> in 2023.
+          </p>
+
+          <p>
+            My approach blends my exercise science background with an integrated bodywork
+            practice — Swedish, deep tissue, myofascial release, trigger point therapy,
+            cupping, and craniosacral techniques all woven together to meet your body where
+            it is.
+          </p>
+
+          <p>
+            I also have a deep passion for energy work, and I aim to create a grounded,
+            nurturing space where each client is invited to come home to their body through
+            breathwork and mindfulness during their session.
+          </p>
+        </div>
+
+        <div class="mt-8 bg-sage-100 border border-sage-200 rounded-xl p-5 text-sm text-sage-800">
+          <p class="font-medium text-sage-900 mb-2">Credentials</p>
+          <ul class="space-y-1.5 list-disc list-inside marker:text-sage-500">
+            <li>Colorado Licensed Massage Therapist (MT.0026235)</li>
+            <li>BS, Exercise Science — Slippery Rock University</li>
+            <li>Costa Rica School of Massage Therapy, 2023</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sage-100 py-16">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-sage-900 mb-6">My Philosophy</h2>
+      <p class="text-lg text-sage-800 leading-relaxed">
+        There is chaos and chemistry reflected in every area of existence — from the stars
+        in the cosmos to the cells in the human body. Massage and bodywork are how I help
+        clients quiet some of that chaos and find their own rhythm again.
+      </p>
+    </div>
+  </section>
+</Layout>

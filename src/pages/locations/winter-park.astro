@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { winterParkLocationSchema } from '../../data/schema';
+
+const bookingUrl = 'https://www.vagaro.com/bsmpty/services';
+const mapEmbed =
+  'https://www.google.com/maps?q=21+Telemark+Dr+Unit+201,+Winter+Park,+CO+80482&output=embed';
+const mapsLink =
+  'https://www.google.com/maps/search/?api=1&query=21+Telemark+Dr+Unit+201,+Winter+Park,+CO+80482';
+---
+
+<Layout
+  title="Deep Tissue Massage in Winter Park, CO | Chaos & Chemistry"
+  description="Deep tissue, Swedish, and craniosacral massage in Winter Park, Colorado at Blue Sky Massage. Wednesdays 10 AM–3 PM, Saturday evenings upon request. Recovery-focused bodywork for skiers, snowboarders, and locals."
+  schema={winterParkLocationSchema}
+>
+  <section class="bg-sage-100 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">Winter Park Location</p>
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900 mb-4">
+        Deep Tissue Massage in Winter Park, Colorado
+      </h1>
+      <p class="text-lg text-sage-800 leading-relaxed mb-6">
+        Located inside Blue Sky Massage — minutes from Winter Park Resort. Recovery-focused
+        bodywork for skiers, snowboarders, and mountain travelers, plus Swedish, myofascial
+        release, cupping, and craniosacral sessions for locals.
+      </p>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center bg-clay-600 hover:bg-clay-800 text-white px-7 py-3.5 rounded-full text-base font-medium transition-colors shadow-sm"
+        >
+          Book Appointment →
+        </a>
+        <p class="text-sm text-sage-700">
+          Reservations via Blue Sky Massage's Vagaro booking system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="font-display text-2xl text-sage-900 mb-4">Hours</h2>
+        <ul class="space-y-2 text-sage-800 mb-8">
+          <li class="flex justify-between border-b border-sage-200 pb-2">
+            <span class="font-medium">Wednesday</span>
+            <span>10:00 AM – 3:00 PM</span>
+          </li>
+          <li class="flex justify-between border-b border-sage-200 pb-2">
+            <span class="font-medium">Saturday evenings</span>
+            <span>By request</span>
+          </li>
+        </ul>
+
+        <h2 class="font-display text-2xl text-sage-900 mb-4">Contact &amp; Address</h2>
+        <address class="not-italic text-sage-800 leading-relaxed mb-6">
+          <strong class="text-sage-900">Blue Sky Massage</strong><br />
+          21 Telemark Dr Unit 201<br />
+          Winter Park, CO 80482<br />
+          <a href="tel:+19705311324" class="text-sage-700 hover:text-sage-900 underline">
+            (970) 531-1324
+          </a>
+        </address>
+
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noopener"
+          class="text-sm text-sage-700 hover:text-sage-900 underline"
+        >
+          Get directions →
+        </a>
+      </div>
+
+      <div>
+        <div class="rounded-2xl overflow-hidden border border-sage-200 shadow-sm aspect-square">
+          <iframe
+            src={mapEmbed}
+            width="100%"
+            height="100%"
+            style="border:0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Blue Sky Massage, Winter Park, CO"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

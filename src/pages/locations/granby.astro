@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { granbyLocationSchema } from '../../data/schema';
+
+const bookingUrl = 'https://manaacu.janeapp.com/#/staff_member/4';
+const mapEmbed =
+  'https://www.google.com/maps?q=55+1st+St+Unit+A,+Granby,+CO+80446&output=embed';
+const mapsLink =
+  'https://www.google.com/maps/search/?api=1&query=55+1st+St+Unit+A,+Granby,+CO+80446';
+---
+
+<Layout
+  title="Massage Therapy in Granby, CO | Deep Tissue, Craniosacral & Bodywork"
+  description="Book a massage in Granby, Colorado at Mana Acupuncture. Tuesdays 4:30–7 PM, Fridays 10 AM–3 PM, Saturdays 11 AM–4 PM. Deep tissue, Swedish, myofascial release, cupping, and craniosacral therapy."
+  schema={granbyLocationSchema}
+>
+  <section class="bg-sage-100 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">Granby Location</p>
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900 mb-4">
+        Massage in Granby, Colorado
+      </h1>
+      <p class="text-lg text-sage-800 leading-relaxed mb-6">
+        Located inside Mana Acupuncture in downtown Granby — a calm,
+        welcoming space for therapeutic bodywork in Grand County.
+      </p>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center bg-sage-800 hover:bg-sage-900 text-white px-7 py-3.5 rounded-full text-base font-medium transition-colors shadow-sm"
+        >
+          Book Appointment →
+        </a>
+        <p class="text-sm text-sage-700">
+          Reservations via Mana Acupuncture's Jane scheduling system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="font-display text-2xl text-sage-900 mb-4">Hours</h2>
+        <ul class="space-y-2 text-sage-800 mb-8">
+          <li class="flex justify-between border-b border-sage-200 pb-2">
+            <span class="font-medium">Tuesday</span>
+            <span>4:30 PM – 7:00 PM</span>
+          </li>
+          <li class="flex justify-between border-b border-sage-200 pb-2">
+            <span class="font-medium">Friday</span>
+            <span>10:00 AM – 3:00 PM</span>
+          </li>
+          <li class="flex justify-between border-b border-sage-200 pb-2">
+            <span class="font-medium">Saturday</span>
+            <span>11:00 AM – 4:00 PM</span>
+          </li>
+        </ul>
+
+        <h2 class="font-display text-2xl text-sage-900 mb-4">Contact &amp; Address</h2>
+        <address class="not-italic text-sage-800 leading-relaxed mb-6">
+          <strong class="text-sage-900">Mana Acupuncture</strong><br />
+          55 1st St Unit A<br />
+          Granby, CO 80446<br />
+          <a href="tel:+19702813022" class="text-sage-700 hover:text-sage-900 underline">
+            (970) 281-3022
+          </a>
+        </address>
+
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noopener"
+          class="text-sm text-sage-700 hover:text-sage-900 underline"
+        >
+          Get directions →
+        </a>
+      </div>
+
+      <div>
+        <div class="rounded-2xl overflow-hidden border border-sage-200 shadow-sm aspect-square">
+          <iframe
+            src={mapEmbed}
+            width="100%"
+            height="100%"
+            style="border:0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Mana Acupuncture, Granby, CO"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

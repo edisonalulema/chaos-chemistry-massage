@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import sarahPhoto from '../assets/sarah.png';
+import { organizationSchema } from '../data/schema';
+
+const services = [
+  'Swedish Massage',
+  'Deep Tissue',
+  'Myofascial Release',
+  'Trigger Point Therapy',
+  'Cupping',
+  'Craniosacral Therapy',
+  'Energy Work',
+];
+---
+
+<Layout
+  title="Massage Therapy in Granby & Winter Park, CO | Chaos & Chemistry"
+  description="Therapeutic massage and bodywork in Grand County, Colorado. Swedish, deep tissue, myofascial release, cupping, and craniosacral therapy with Sarah, LMT."
+  schema={organizationSchema}
+>
+  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-4">
+          Massage &amp; Bodywork · Grand County, Colorado
+        </p>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-sage-900 leading-tight mb-4">
+          Massage Therapy in
+          <span class="whitespace-nowrap">Granby &amp; Winter Park,</span>
+          Colorado
+        </h1>
+        <p class="font-display text-2xl text-sage-700 italic mb-6">
+          Escape the chaos. Find the chemistry.
+        </p>
+        <p class="text-lg text-sage-800 leading-relaxed mb-8 max-w-lg">
+          Therapeutic bodywork in Grand County — blending Swedish, deep tissue,
+          myofascial release, cupping, and craniosacral techniques to encourage
+          energetic and physical alignment.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/locations/granby"
+            class="bg-sage-800 hover:bg-sage-900 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
+          >
+            Book in Granby
+          </a>
+          <a
+            href="/locations/winter-park"
+            class="bg-clay-600 hover:bg-clay-800 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
+          >
+            Book in Winter Park
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <Image
+          src={sarahPhoto}
+          alt="Sarah, licensed massage therapist at Chaos & Chemistry"
+          class="rounded-2xl shadow-xl w-full aspect-square object-cover"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 768px) 100vw, 500px"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sage-100 py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="font-display text-2xl md:text-3xl text-sage-900 leading-relaxed italic">
+        “From the stars in the cosmos to the cells in the human body —
+        seemingly chaotic elements that interconnect and flow together
+        with purpose and synchronicity.”
+      </p>
+      <p class="mt-8 text-sage-700 max-w-2xl mx-auto">
+        Massage and bodywork aim to alleviate some of the inner and outer chaos
+        by encouraging energetic and physical alignment. Consistency is key to
+        the maintenance of wellbeing.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">
+          What I Offer
+        </p>
+        <h2 class="font-display text-3xl md:text-4xl text-sage-900">
+          An Integrated Approach to Bodywork
+        </h2>
+      </div>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {services.map((s) => (
+          <li class="bg-white border border-sage-200 rounded-lg px-4 py-6 text-center text-sage-800 hover:border-sage-400 transition-colors">
+            {s}
+          </li>
+        ))}
+      </ul>
+      <div class="text-center">
+        <a
+          href="/services"
+          class="inline-block border-2 border-sage-700 text-sage-800 hover:bg-sage-700 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
+        >
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sage-50 py-20 border-t border-sage-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">
+          Where to Find Me
+        </p>
+        <h2 class="font-display text-3xl md:text-4xl text-sage-900">
+          Two Locations in Grand County
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <a
+          href="/locations/granby"
+          class="bg-white border border-sage-200 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
+        >
+          <h3 class="font-display text-2xl text-sage-900 mb-2 group-hover:text-sage-700">
+            Granby
+          </h3>
+          <p class="text-sage-600 text-sm mb-4">Mana Acupuncture</p>
+          <ul class="text-sage-700 text-sm space-y-1 mb-4">
+            <li>Tuesdays 4:30 PM – 7 PM</li>
+            <li>Fridays 10 AM – 3 PM</li>
+            <li>Saturdays 11 AM – 4 PM</li>
+          </ul>
+          <p class="text-sage-800 font-medium">View hours &amp; book →</p>
+        </a>
+        <a
+          href="/locations/winter-park"
+          class="bg-white border border-sage-200 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
+        >
+          <h3 class="font-display text-2xl text-sage-900 mb-2 group-hover:text-sage-700">
+            Winter Park
+          </h3>
+          <p class="text-sage-600 text-sm mb-4">Blue Sky Massage</p>
+          <ul class="text-sage-700 text-sm space-y-1 mb-4">
+            <li>Wednesdays 10 AM – 3 PM</li>
+            <li>Saturday evenings by request</li>
+          </ul>
+          <p class="text-sage-800 font-medium">View hours &amp; book →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-6 grid sm:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="font-display text-xl text-sage-900 mb-3">Building Resiliency</h3>
+        <p class="text-sage-700 text-sm leading-relaxed">
+          Bodywork that supports the nervous system and helps you adapt to life's demands.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-xl text-sage-900 mb-3">Self-Healing Space</h3>
+        <p class="text-sage-700 text-sm leading-relaxed">
+          A grounded, nurturing environment where your body is invited to do its own work.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-xl text-sage-900 mb-3">Cultivating Connection</h3>
+        <p class="text-sage-700 text-sm leading-relaxed">
+          Coming home to your body through breathwork, mindfulness, and intentional touch.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
