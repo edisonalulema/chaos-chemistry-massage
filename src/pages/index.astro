@@ -4,20 +4,18 @@ import { Image } from 'astro:assets';
 import sarahPhoto from '../assets/sarah.png';
 import { organizationSchema } from '../data/schema';
 
-const services = [
-  'Swedish Massage',
+const techniques = [
+  'Swedish',
   'Deep Tissue',
   'Myofascial Release',
   'Trigger Point Therapy',
   'Cupping',
-  'Craniosacral Therapy',
-  'Energy Work',
 ];
 ---
 
 <Layout
   title="Massage Therapy in Granby & Winter Park, CO | Chaos & Chemistry"
-  description="Therapeutic massage and bodywork in Grand County, Colorado. Swedish, deep tissue, myofascial release, cupping, and craniosacral therapy with Sarah, LMT."
+  description="Integrated therapeutic bodywork in Grand County, Colorado. Each session blends Swedish, deep tissue, myofascial release, trigger point, and cupping techniques with Sarah, LMT."
   schema={organizationSchema}
 >
   <section class="relative overflow-hidden">
@@ -35,9 +33,9 @@ const services = [
           Escape the chaos. Find the chemistry.
         </p>
         <p class="text-lg text-sage-800 leading-relaxed mb-8 max-w-lg">
-          Therapeutic bodywork in Grand County — blending Swedish, deep tissue,
-          myofascial release, cupping, and craniosacral techniques to encourage
-          energetic and physical alignment.
+          Therapeutic bodywork in Grand County. Every session is integrated —
+          Swedish, deep tissue, myofascial release, trigger point, and cupping
+          woven together to meet your body where it is.
         </p>
         <div class="flex flex-wrap gap-3">
           <a
@@ -83,30 +81,30 @@ const services = [
   </section>
 
   <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">
-          What I Offer
-        </p>
-        <h2 class="font-display text-3xl md:text-4xl text-sage-900">
-          An Integrated Approach to Bodywork
-        </h2>
-      </div>
-      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {services.map((s) => (
-          <li class="bg-white border border-sage-200 rounded-lg px-4 py-6 text-center text-sage-800 hover:border-sage-400 transition-colors">
-            {s}
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">
+        My Approach
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl text-sage-900 mb-6">
+        One Session. Many Techniques.
+      </h2>
+      <p class="text-lg text-sage-800 leading-relaxed mb-10">
+        I don't sell modalities as separate menu items. Each session is integrated —
+        I weave together techniques based on what your body is asking for that day.
+      </p>
+      <ul class="flex flex-wrap justify-center gap-2 mb-12">
+        {techniques.map((t) => (
+          <li class="bg-white border border-sage-200 rounded-full px-5 py-2 text-sm text-sage-800">
+            {t}
           </li>
         ))}
       </ul>
-      <div class="text-center">
-        <a
-          href="/services"
-          class="inline-block border-2 border-sage-700 text-sage-800 hover:bg-sage-700 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
-        >
-          Explore Services
-        </a>
-      </div>
+      <a
+        href="/services"
+        class="inline-block border-2 border-sage-700 text-sage-800 hover:bg-sage-700 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
+      >
+        How a Session Flows
+      </a>
     </div>
   </section>
 

@@ -1,133 +1,93 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const services = [
+const techniques = [
   {
-    id: 'swedish',
-    name: 'Swedish Massage',
-    blurb:
-      'Long, flowing strokes that calm the nervous system, improve circulation, and ease general muscular tension. A great starting point if you are new to massage or want a relaxation-focused session.',
-    locations: [
-      { href: '/locations/granby', anchor: 'Book Swedish massage in Granby' },
-      { href: '/locations/winter-park', anchor: 'Book Swedish massage in Winter Park' },
-    ],
+    name: 'Swedish',
+    note: 'Long, flowing strokes that calm the nervous system and warm tissue before deeper work.',
   },
   {
-    id: 'deep-tissue',
-    name: 'Deep Tissue Massage',
-    blurb:
-      'Slower, more focused pressure that reaches deeper layers of muscle and connective tissue. Ideal for chronic tension, postural strain, and athletes — particularly skiers, snowboarders, and trail runners in Grand County.',
-    locations: [
-      { href: '/locations/winter-park', anchor: 'Deep tissue massage in Winter Park' },
-      { href: '/locations/granby', anchor: 'Deep tissue massage in Granby' },
-    ],
+    name: 'Deep Tissue',
+    note: 'Slower, more focused pressure for chronic tension, postural strain, and athletic recovery.',
   },
   {
-    id: 'myofascial',
     name: 'Myofascial Release',
-    blurb:
-      'Sustained, gentle pressure into the fascia — the connective tissue web that wraps every muscle and organ. Releases restrictions that limit movement and contribute to pain patterns that traditional massage may not reach.',
-    locations: [
-      { href: '/locations/granby', anchor: 'Myofascial release in Granby' },
-      { href: '/locations/winter-park', anchor: 'Myofascial release in Winter Park' },
-    ],
+    note: 'Sustained, gentle pressure into the fascia to release restrictions that limit movement.',
   },
   {
-    id: 'trigger-point',
-    name: 'Trigger Point Therapy',
-    blurb:
-      'Precise, sustained pressure on specific points within muscle tissue that refer pain elsewhere in the body. Effective for tension headaches, jaw tightness, and stubborn shoulder or hip pain.',
-    locations: [
-      { href: '/locations/granby', anchor: 'Trigger point therapy in Granby' },
-      { href: '/locations/winter-park', anchor: 'Trigger point therapy in Winter Park' },
-    ],
+    name: 'Trigger Point',
+    note: 'Precise pressure on points that refer pain elsewhere — tension headaches, jaw, shoulders, hips.',
   },
   {
-    id: 'cupping',
     name: 'Cupping',
-    blurb:
-      'Silicone or glass cups create gentle suction that lifts fascia, increases local circulation, and decompresses tight tissue. Often combined with massage strokes for athletes and clients with chronic muscle tension.',
-    locations: [
-      { href: '/locations/winter-park', anchor: 'Cupping therapy in Winter Park' },
-      { href: '/locations/granby', anchor: 'Cupping therapy in Granby' },
-    ],
-  },
-  {
-    id: 'craniosacral',
-    name: 'Craniosacral Therapy',
-    blurb:
-      'A gentle, light-touch modality that works with the subtle rhythms of the central nervous system. Especially supportive for stress, migraines, TMJ, concussion recovery, and clients seeking deep nervous-system regulation.',
-    locations: [
-      { href: '/locations/granby', anchor: 'Craniosacral therapy in Granby' },
-      { href: '/locations/winter-park', anchor: 'Craniosacral therapy in Winter Park' },
-    ],
-  },
-  {
-    id: 'energy-work',
-    name: 'Energy Work',
-    blurb:
-      'Intentional, grounded touch that supports the body\'s subtle energetic field. Integrated into sessions to create a holistic experience of physical, emotional, and energetic alignment.',
-    locations: [
-      { href: '/locations/granby', anchor: 'Energy work sessions in Granby' },
-      { href: '/locations/winter-park', anchor: 'Energy work sessions in Winter Park' },
-    ],
+    note: 'Silicone cups create gentle suction that lifts fascia and decompresses tight tissue.',
   },
 ];
 ---
 
 <Layout
-  title="Massage Services in Granby & Winter Park, CO | Chaos & Chemistry"
-  description="Swedish, deep tissue, myofascial release, trigger point therapy, cupping, craniosacral therapy, and energy work in Grand County, Colorado."
+  title="My Approach to Bodywork | Granby & Winter Park Massage"
+  description="An integrated approach to massage and bodywork in Grand County, Colorado. Each session blends Swedish, deep tissue, myofascial release, trigger point, and cupping techniques."
 >
-  <section class="bg-sage-100 py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-4">Services</p>
+  <section class="bg-sage-100 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-4">My Approach</p>
       <h1 class="font-display text-4xl md:text-5xl text-sage-900 mb-6">
-        Massage Services in Granby &amp; Winter Park, CO
+        One Session. Many Techniques.
       </h1>
       <p class="text-lg text-sage-800 leading-relaxed">
-        An integrated approach to bodywork — every session is tailored to what your body
-        is asking for that day. Sarah blends techniques from her Exercise Science background
-        and Costa Rica School of Massage Therapy training to create a session that meets
-        you exactly where you are.
+        I don't offer modalities as separate services. Every session is integrated —
+        I weave techniques together based on what your body is asking for that day.
+        You don't pick from a menu. You show up, we talk, and the session unfolds.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <nav aria-label="Service list" class="mb-12 flex flex-wrap gap-2 justify-center">
-        {services.map((s) => (
-          <a
-            href={`#${s.id}`}
-            class="text-xs uppercase tracking-wider text-sage-700 hover:text-sage-900 border border-sage-300 hover:border-sage-700 rounded-full px-3 py-1.5 transition-colors"
-          >
-            {s.name}
-          </a>
-        ))}
-      </nav>
-
-      <div class="space-y-12">
-        {services.map((s) => (
-          <article id={s.id} class="scroll-mt-24 border-l-4 border-sage-400 pl-6">
-            <h2 class="font-display text-2xl md:text-3xl text-sage-900 mb-3">
-              {s.name}
-            </h2>
-            <p class="text-sage-800 leading-relaxed text-lg mb-4">{s.blurb}</p>
-            <p class="text-sm text-sage-700">
-              Available at:{' '}
-              {s.locations.map((loc, i) => (
-                <>
-                  <a href={loc.href} class="text-sage-800 hover:text-sage-900 underline underline-offset-2">
-                    {loc.anchor}
-                  </a>
-                  {i < s.locations.length - 1 ? ' · ' : ''}
-                </>
-              ))}
-            </p>
-          </article>
-        ))}
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-sage-900 mb-6 text-center">
+        How a Session Flows
+      </h2>
+      <div class="space-y-6 text-lg text-sage-800 leading-relaxed">
+        <p>
+          We start with a brief check-in — what's been going on in your body this week,
+          where you're holding tension, what you're hoping to move through. From there,
+          I build the session around what I'm feeling in your tissue.
+        </p>
+        <p>
+          A typical session might open with long Swedish strokes to warm everything up,
+          shift into focused deep tissue or myofascial work where you need it, weave in
+          trigger point release for stubborn knots, and finish with cupping or
+          breath-led integration to settle the nervous system.
+        </p>
+        <p>
+          You'll never be asked to choose a single technique. Your body changes from
+          session to session — so does mine.
+        </p>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-sage-50 py-16 md:py-20 border-y border-sage-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3">What I Bring</p>
+        <h2 class="font-display text-3xl md:text-4xl text-sage-900 mb-4">
+          Techniques Woven Into Every Session
+        </h2>
+        <p class="text-sage-700 max-w-2xl mx-auto">
+          The training and tools I draw from. None of these are standalone services —
+          they're the vocabulary I use to respond to what your body needs.
+        </p>
+      </div>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {techniques.map((t) => (
+          <li class="bg-white border border-sage-200 rounded-2xl p-6">
+            <h3 class="font-display text-xl text-sage-900 mb-2">{t.name}</h3>
+            <p class="text-sm text-sage-700 leading-relaxed">{t.note}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 

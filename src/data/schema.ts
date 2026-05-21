@@ -9,8 +9,6 @@ const SHARED_SERVICES = [
   'Myofascial Release',
   'Trigger Point Therapy',
   'Cupping',
-  'Craniosacral Therapy',
-  'Energy Work',
 ];
 
 export const organizationSchema = {
@@ -20,7 +18,7 @@ export const organizationSchema = {
   name: 'Chaos & Chemistry Massage and Bodywork',
   alternateName: 'Chaos and Chemistry Massage',
   description:
-    'Licensed massage therapy practice serving Granby and Winter Park, Colorado. Swedish, deep tissue, myofascial release, trigger point, cupping, and craniosacral therapy.',
+    'Licensed massage therapy practice serving Granby and Winter Park, Colorado. Swedish, deep tissue, myofascial release, trigger point, and cupping.',
   url: SITE,
   email: 'chaos.chemistry.massage@gmail.com',
   image: `${SITE}/sarah.jpg`,
@@ -57,7 +55,7 @@ export const granbyLocationSchema = {
   image: `${SITE}/sarah.jpg`,
   priceRange: '$$',
   description:
-    'Therapeutic massage in downtown Granby, Colorado — located inside Mana Acupuncture. Deep tissue, Swedish, myofascial release, cupping, and craniosacral therapy.',
+    'Therapeutic massage in downtown Granby, Colorado — located inside Mana Acupuncture. Integrated bodywork blending deep tissue, Swedish, myofascial release, trigger point, and cupping.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '55 1st St Unit A',
@@ -116,7 +114,7 @@ export const winterParkLocationSchema = {
   image: `${SITE}/sarah.jpg`,
   priceRange: '$$',
   description:
-    'Therapeutic massage in Winter Park, Colorado — located inside Blue Sky Massage, minutes from Winter Park Resort. Deep tissue, Swedish, myofascial release, cupping, and craniosacral therapy for skiers, snowboarders, and locals.',
+    'Therapeutic massage in Winter Park, Colorado — located inside Blue Sky Massage, minutes from Winter Park Resort. Integrated bodywork blending deep tissue, Swedish, myofascial release, trigger point, and cupping for skiers, snowboarders, and locals.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '21 Telemark Dr Unit 201',
