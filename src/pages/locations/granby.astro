@@ -1,17 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { granbyLocationSchema } from '../../data/schema';
+import granbyExterior from '../../assets/granby-exterior.jpg';
+import granbyReception from '../../assets/granby-reception.jpg';
+import granbyTreatmentRoom from '../../assets/granby-treatment-room.jpg';
 
 const bookingUrl = 'https://manaacu.janeapp.com/#/staff_member/4';
 const mapEmbed =
   'https://www.google.com/maps?q=55+1st+St+Unit+A,+Granby,+CO+80446&output=embed';
 const mapsLink =
   'https://www.google.com/maps/search/?api=1&query=55+1st+St+Unit+A,+Granby,+CO+80446';
+
+const gallery = [
+  {
+    src: granbyExterior,
+    alt: 'Exterior of Mana Acupuncture at 55 1st St, Granby, Colorado — a blue board-and-batten storefront with the MANA Acupuncture sign',
+  },
+  {
+    src: granbyReception,
+    alt: 'Reception and waiting area at Mana Acupuncture in Granby — calm space with a teal velvet couch, plants, and cactus artwork',
+  },
+  {
+    src: granbyTreatmentRoom,
+    alt: 'Massage treatment room in Granby with a heated massage table, gold lacquer floral screen, warm pendant lighting, and mountain artwork',
+  },
+];
 ---
 
 <Layout
   title="Massage Therapy in Granby, CO | Deep Tissue, Myofascial & Bodywork"
   description="Book a massage in Granby, Colorado at Mana Acupuncture. Tuesdays 4:30–7 PM, Fridays 10 AM–3 PM, Saturdays 11 AM–4 PM. Integrated bodywork — deep tissue, Swedish, myofascial release, trigger point therapy, and cupping woven into every session."
+  ogImage="/photos/granby/treatment-room.jpg"
   schema={granbyLocationSchema}
 >
   <section class="bg-sage-100 py-12 md:py-16">
@@ -92,6 +112,31 @@ const mapsLink =
             title="Map of Mana Acupuncture, Granby, CO"
           ></iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sage-100 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-sage-600 uppercase tracking-[0.2em] text-xs mb-3 text-center">
+        Inside the Studio
+      </p>
+      <h2 class="font-display text-3xl text-sage-900 mb-10 text-center">
+        The Granby Space at Mana Acupuncture
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {gallery.map((photo) => (
+          <figure class="rounded-2xl overflow-hidden border border-sage-200 shadow-sm bg-white">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              class="w-full aspect-[4/3] object-cover"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
+            />
+          </figure>
+        ))}
       </div>
     </div>
   </section>
