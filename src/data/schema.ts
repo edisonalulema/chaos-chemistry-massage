@@ -80,9 +80,9 @@ export const granbyLocationSchema = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Tuesday',
-      opens: '16:30',
-      closes: '19:00',
+      dayOfWeek: ['Tuesday', 'Thursday'],
+      opens: '15:30',
+      closes: '18:30',
     },
     {
       '@type': 'OpeningHoursSpecification',
@@ -93,8 +93,8 @@ export const granbyLocationSchema = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: 'Saturday',
-      opens: '11:00',
-      closes: '16:00',
+      opens: '10:00',
+      closes: '13:30',
     },
   ],
   areaServed: [
